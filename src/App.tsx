@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import MatchingListPage from "./pages/MatchingListPage";
+import MatchingDetailPage from "./pages/MatchingDetailPage";
 import { LoginForm } from "./components/auth/login-form";
 import { TermsAgreementForm } from "./components/auth/terms-agreement";
 import { SignUpForm } from "./components/auth/signup-form";
@@ -35,6 +37,8 @@ const App = () => (
           <Route path="/find-password/reset" element={<PasswordReset />} />
           <Route path="/password-reset/complete" element={<PasswordResetComplete />} />
           <Route path="/home" element={<Index />} />
+          <Route path="/matching" element={<MatchingListPage />} />
+          <Route path="/matching/:id" element={<MatchingDetailPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
