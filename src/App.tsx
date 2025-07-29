@@ -9,6 +9,11 @@ import MatchingListPage from "./pages/MatchingListPage";
 import MatchingDetailPage from "./pages/MatchingDetailPage";
 import IntegratedManagementPage from "./pages/IntegratedManagementPage";
 import RequestDetailPage from "./pages/RequestDetailPage";
+import MyPage from "./pages/MyPage";
+import EditProfilePage from "./pages/EditProfilePage";
+import InquirySubmitPage from "./pages/InquirySubmitPage";
+import InquiryListPage from "./pages/InquiryListPage";
+import InquiryDetailPage from "./pages/InquiryDetailPage";
 import { LoginForm } from "./components/auth/login-form";
 import { TermsAgreementForm } from "./components/auth/terms-agreement";
 import { SignUpForm } from "./components/auth/signup-form";
@@ -43,6 +48,11 @@ const App = () => (
           <Route path="/matching/:id" element={<MatchingDetailPage />} />
           <Route path="/management" element={<IntegratedManagementPage />} />
           <Route path="/management/request/:id" element={<RequestDetailPage />} />
+          <Route path="/my" element={<MyPage />} />
+          <Route path="/my/edit-profile" element={<EditProfilePage />} />
+          <Route path="/my/inquiry" element={<InquiryListPage />} />
+          <Route path="/my/inquiry/new" element={<InquirySubmitPage />} />
+          <Route path="/my/inquiry/:id" element={<InquiryDetailPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -1,11 +1,11 @@
-import { Home, Users, Folder, User } from 'lucide-react';
+import { Home, Users, Clipboard, User } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { tabMenus } from '@/data/homeData';
 
 const iconMap = {
   home: Home,
   users: Users,
-  folder: Folder,
+  folder: Clipboard,
   user: User
 };
 

@@ -109,7 +109,7 @@ export const tabMenus = [
     id: 'home',
     title: '홈',
     icon: 'home',
-    path: '/'
+    path: '/home'
   },
   {
     id: 'matching',
