@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { MobileLayout } from '@/components/ui/mobile-layout';
 import { ProfileHeader } from '@/components/mypage/ProfileHeader';
 import { SettingMenuList } from '@/components/mypage/SettingMenuList';
-import { CompanyFooter } from '@/components/home/CompanyFooter';
 import { userProfile } from '@/data/myPageData';
 
 export default function MyPage() {
@@ -50,8 +49,8 @@ export default function MyPage() {
           />
         </div>
 
-        {/* 회사 정보 푸터 */}
-        <CompanyFooter />
+        {/* 하단 여백 (탭바 공간) */}
+        <div className="h-20" />
       </div>
     </MobileLayout>
   );
