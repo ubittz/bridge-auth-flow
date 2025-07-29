@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "./button";
 
 interface MobileHeaderProps {
@@ -12,6 +13,15 @@ export function MobileHeader({
   onBack, 
   showBackButton = true 
 }: MobileHeaderProps) {
+  const navigate = useNavigate();
+  
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+    } else {
+      navigate(-1);
+    }
+  };
   return (
     <header className="flex items-center justify-between p-4 border-b bg-white">
       <div className="flex items-center gap-4">
@@ -19,7 +29,7 @@ export function MobileHeader({
           <Button 
             variant="ghost" 
             size="icon"
-            onClick={onBack}
+            onClick={handleBack}
             className="p-0 w-6 h-6"
           >
             <ArrowLeft className="w-5 h-5" />
