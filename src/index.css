@@ -17,8 +17,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Bridge M brand colors */
+    --primary: 215 87% 57%; /* #2888F6 - Bridge M blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 215 87% 52%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -34,9 +36,13 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 215 87% 57%;
 
     --radius: 0.5rem;
+    
+    /* Custom mobile styles */
+    --mobile-padding: 1rem;
+    --mobile-max-width: 420px;
 
     --sidebar-background: 0 0% 98%;
 
