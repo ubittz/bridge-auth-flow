@@ -7,6 +7,7 @@ import { FaqList } from '@/components/management/FaqList';
 import { NoticeList } from '@/components/home/NoticeList';
 import { CompanyFooter } from '@/components/home/CompanyFooter';
 import { requestItems, faqItems, noticeItems } from '@/data/managementData';
+import { BottomTabBar } from '@/components/home/BottomTabBar';
 
 export default function IntegratedManagementPage() {
   const navigate = useNavigate();
@@ -80,6 +81,9 @@ export default function IntegratedManagementPage() {
         {/* 회사 정보 푸터 */}
         <CompanyFooter />
       </div>
+      
+      {/* 하단 탭바 */}
+      <BottomTabBar />
     </MobileLayout>
   );
 }

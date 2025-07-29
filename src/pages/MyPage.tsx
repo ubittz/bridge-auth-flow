@@ -3,6 +3,7 @@ import { MobileLayout } from '@/components/ui/mobile-layout';
 import { ProfileHeader } from '@/components/mypage/ProfileHeader';
 import { SettingMenuList } from '@/components/mypage/SettingMenuList';
 import { userProfile } from '@/data/myPageData';
+import { BottomTabBar } from '@/components/home/BottomTabBar';
 
 export default function MyPage() {
   const navigate = useNavigate();
@@ -52,6 +53,9 @@ export default function MyPage() {
         {/* 하단 여백 (탭바 공간) */}
         <div className="h-20" />
       </div>
+      
+      {/* 하단 탭바 */}
+      <BottomTabBar />
     </MobileLayout>
   );
 }
