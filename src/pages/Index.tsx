@@ -1,32 +1,39 @@
-import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { User } from "lucide-react";
 import { MobileLayout } from "@/components/ui/mobile-layout";
+import { RequestStatusGrid } from "@/components/home/RequestStatusGrid";
+import { PromotionBanner } from "@/components/home/PromotionBanner";
+import { MatchingCardList } from "@/components/home/MatchingCardList";
+import { PortfolioCarousel } from "@/components/home/PortfolioCarousel";
+import { NoticeList } from "@/components/home/NoticeList";
+import { CompanyFooter } from "@/components/home/CompanyFooter";
+import { BottomTabBar } from "@/components/home/BottomTabBar";
 
 const Index = () => {
-  const navigate = useNavigate();
-
   return (
     <MobileLayout>
-      <div className="flex flex-col items-center justify-center h-screen p-4 space-y-8">
-        <div className="text-center space-y-4">
-          <div className="text-4xl font-bold">
-            <span className="text-foreground">bridge</span>
-            <span className="text-primary">M</span>
-          </div>
-          <h1 className="text-2xl font-bold text-foreground">환영합니다!</h1>
-          <p className="text-muted-foreground">
-            브릿지엠에 성공적으로 로그인하셨습니다.
-          </p>
+      {/* Header */}
+      <header className="flex items-center justify-between p-4 bg-white border-b border-gray-100">
+        <div className="text-2xl font-bold">
+          <span className="text-foreground">bridge</span>
+          <span className="text-primary">M</span>
         </div>
-        
-        <Button 
-          onClick={() => navigate('/login')}
-          variant="outline"
-          className="w-full max-w-xs h-12"
-        >
-          로그아웃
-        </Button>
-      </div>
+        <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+          <User className="w-5 h-5 text-gray-600" />
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="bg-gray-50 min-h-screen">
+        <RequestStatusGrid />
+        <PromotionBanner />
+        <MatchingCardList />
+        <PortfolioCarousel />
+        <NoticeList />
+        <CompanyFooter />
+      </main>
+
+      {/* Bottom Tab Bar */}
+      <BottomTabBar />
     </MobileLayout>
   );
 };
