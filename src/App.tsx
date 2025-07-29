@@ -1,8 +1,9 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import MatchingListPage from "./pages/MatchingListPage";
@@ -32,7 +33,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginForm />} />
+          {/* 루트 경로를 /home으로 리다이렉트 - 로그인 없이 접근 가능 */}
+          <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<TermsAgreementForm />} />
           <Route path="/signup/form" element={<SignUpForm />} />
@@ -43,6 +45,7 @@ const App = () => (
           <Route path="/find-password" element={<EmailVerification mode="find-password" />} />
           <Route path="/find-password/reset" element={<PasswordReset />} />
           <Route path="/password-reset/complete" element={<PasswordResetComplete />} />
+          {/* 메인 페이지 - 로그인 없이 접근 가능하도록 임시 설정 */}
           <Route path="/home" element={<Index />} />
           <Route path="/matching" element={<MatchingListPage />} />
           <Route path="/matching/:id" element={<MatchingDetailPage />} />
