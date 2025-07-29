@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import MatchingListPage from "./pages/MatchingListPage";
 import MatchingDetailPage from "./pages/MatchingDetailPage";
+import IntegratedManagementPage from "./pages/IntegratedManagementPage";
+import RequestDetailPage from "./pages/RequestDetailPage";
 import { LoginForm } from "./components/auth/login-form";
 import { TermsAgreementForm } from "./components/auth/terms-agreement";
 import { SignUpForm } from "./components/auth/signup-form";
@@ -39,6 +41,8 @@ const App = () => (
           <Route path="/home" element={<Index />} />
           <Route path="/matching" element={<MatchingListPage />} />
           <Route path="/matching/:id" element={<MatchingDetailPage />} />
+          <Route path="/management" element={<IntegratedManagementPage />} />
+          <Route path="/management/request/:id" element={<RequestDetailPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

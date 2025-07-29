@@ -1,12 +1,16 @@
 import { noticeData } from '@/data/homeData';
 
-export function NoticeList() {
+interface NoticeListProps {
+  notices?: { id: number; title: string; date: string; }[];
+}
+
+export function NoticeList({ notices = noticeData }: NoticeListProps = {}) {
   return (
     <div className="px-4 mb-6">
       <h2 className="text-lg font-semibold text-foreground mb-4">공지사항</h2>
       
       <div className="space-y-3">
-        {noticeData.map((notice) => (
+        {notices.map((notice) => (
           <div
             key={notice.id}
             className="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0"
